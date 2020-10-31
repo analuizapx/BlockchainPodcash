@@ -132,8 +132,8 @@
 			console.log(val);
 		}
 		
-		async function transfereAutor(){
-			
+		async function transfereDono(){
+			window.contratoPodCash.methods.transfereAutor().send({from:window.coinbase})
 		}
 
 	
@@ -151,14 +151,16 @@
 <body>
 	<button id="getme" onclick="setApoiar()">Apoiar</button>
 	<br/>
-	Valor: <input type="text" name="apoiar" id="apoiar">
+	Valor: <input type="text" name="apoiar" id="apoiar"> wei
 	<br/>
 	<button id="setme" onclick="getAndShowApoio()">Sua contribuição </button>
 	<br/>
-	Valor: <input type="text" name="cont" id="cont">
+	Valor: <input type="text" name="cont" id="cont"> wei
 	<br/>
 	<button id="setme2" onclick="getAndShowValorArrecadado()">Total arrecadado: </button>
-	Valor: <input type="text" name="arrec" id="arrec">
+	Valor: <input type="text" name="arrec" id="arrec"> wei
+	<br/>
+	<button id="setme3" onclick="transfereDono()">Transfere para autor </button>
 	<br/>
 </body>
 </html>
