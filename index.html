@@ -61,7 +61,7 @@
 		}
 		
 		async function setApoiar () {
-                var val = document.getElementById("doar").value;
+                var val = document.getElementById("apoiar").value;
         	window.contratoPodCash.methods.apoiar().send({from:window.coinbase, to: contract_address, value: val});
 		}
 
@@ -76,15 +76,14 @@
 
 		async function getShowContribuicao() {
 		var val = window.contratoPodCash.methods.getSuaContribuicao().call();
-			documente.getElementById
-		  window.contratoPodCash.methods.set(val).send(val, {from:window.coinbase});
+		  
 		}
 
 		if (!ethEnabled()) {
 		  alert("Metamask or browser with Ethereum not detected!");
 		}
 		else {
-			window.SimpleStorage = new web3.eth.Contract(contract_abi, contract_address);
+			window.contratoPodCash = new web3.eth.Contract(contract_abi, contract_address);
 			saveCoinbase();
 		}
 
@@ -95,6 +94,6 @@
 	<br/>
 	Valor: <input type="text" name="apoiar" id="apoiar">
 	<br/>
-	<button id="setme" onclick="getShowContribuicao()">Set</button>
+	<button id="setme" onclick="getShowApoio()">Sua contribuição </button>
 </body>
 </html>
