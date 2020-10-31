@@ -115,6 +115,7 @@
 		async function getAndShowApoio (){
 		var val=window.contratoPodCash.methods.getSuaContribuicao().call();
 			document.getElementById("cont").value = await val;
+		console.log(val);
 		}
 
 	
