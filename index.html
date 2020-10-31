@@ -103,6 +103,10 @@
 		  return false;
 		}
 		
+		async function saveCoinbase () {
+		  window.coinbase = await window.web3.eth.getCoinbase();
+		};
+		
 		async function setApoiar () {
                 var val = document.getElementById("apoiar").value;
         	window.contratoPodCash.methods.apoiar().send({from:window.coinbase, to: contract_address, value: val});
