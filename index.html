@@ -115,22 +115,26 @@
 		};
 		
 		async function setApoiar () {
-                var val = document.getElementById("apoiar").value;
-        	window.contratoPodCash.methods.apoiar().send({from:window.coinbase, to: contract_address, value: val});
+                	var val = document.getElementById("apoiar").value;
+        		window.contratoPodCash.methods.apoiar().send({from:window.coinbase, to: contract_address, value: val});
 		}
 		
 		async function getAndShowApoio(){
-		window.contratoPodCash.methods.setSuaContribuicao().send();
-		var val=window.contratoPodCash.methods.getSuaContribuicao().call();
-		document.getElementById("cont").value = await val;
-		console.log(val);
+			window.contratoPodCash.methods.setSuaContribuicao().send({from:window.coinbase});
+			var val=window.contratoPodCash.methods.getSuaContribuicao().call();
+			document.getElementById("cont").value = await val;
+			console.log(val);
 		}
 		
 		async function getAndShowValorArrecadado(){
-		var val=window.contratoPodCash.methods.getvalorArrecadado().call();
+			var val=window.contratoPodCash.methods.getvalorArrecadado().call();
 			document.getElementById("arrec").value = await val;
-		console.log(val);
-		}		
+			console.log(val);
+		}
+		
+		async function transfereAutor(){
+			
+		}
 
 	
 
