@@ -4,12 +4,19 @@
 	<title>PodCash</title>
 	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
 	<script type="text/javascript">
-		const contract_address = "0x874fb2ca3f4defde2d67f7fba74b351ba919583b";
+		const contract_address = "0x58cb59f647cc3806b7eaec632c7e14570bdac70e";
 
 		const contract_abi = [
 	{
 		"inputs": [],
 		"name": "apoiar",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "setSuaContribuicao",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -67,7 +74,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "getSuaContribuicao",
+		"name": "getSuaContribuisao",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -113,8 +120,9 @@
 		}
 		
 		async function getAndShowApoio(){
+		window.contratoPodCash.methods.setSuaContribuicao().send();
 		var val=window.contratoPodCash.methods.getSuaContribuicao().call();
-			document.getElementById("cont").value = await val;
+		document.getElementById("cont").value = await val;
 		console.log(val);
 		}
 		
