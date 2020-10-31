@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PodCash</title>
+	<title>Simple Storage</title>
 	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
 	<script type="text/javascript">
 		const contract_address = "0x80aec1d099A6038Cd0169625A0C6e8c2e46b68a5";
@@ -49,20 +49,20 @@
 		};
 
 		async function getAndShowVal () {
-		  var val = window.contratoPodCash.methods.get().call();
+		  var val = window.SimpleStorage.methods.get().call();
 			document.getElementById("storedData").value = await val;
 		};
 
 		async function setVal () {
 			var val = document.getElementById("storedData").value;
-		  window.contratoPodCash.methods.set(val).send(val, {from:window.coinbase});
+		  window.SimpleStorage.methods.set(val).send(val, {from:window.coinbase});
 		}
 
 		if (!ethEnabled()) {
 		  alert("Metamask or browser with Ethereum not detected!");
 		}
 		else {
-			window.contratoPodCash = new web3.eth.Contract(contract_abi, contract_address);
+			window.SimpleStorage = new web3.eth.Contract(contract_abi, contract_address);
 			saveCoinbase();
 		}
 
