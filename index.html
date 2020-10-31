@@ -112,7 +112,10 @@
         	window.contratoPodCash.methods.apoiar().send({from:window.coinbase, to: contract_address, value: val});
 		}
 		
-
+		async function getAndShowApoio (){
+		var val=window.contratoPodCash.methods.getSuaContribuicao().call();
+			document.getElementById("cont").value = await val;
+		}
 
 	
 
@@ -132,5 +135,8 @@
 	Valor: <input type="text" name="apoiar" id="apoiar">
 	<br/>
 	<button id="setme" onclick="getAndShowApoio()">Sua contribuição </button>
+	<br/>
+	Valor: <input type="text" name="cont" id="cont">
+	<br/>
 </body>
 </html>
