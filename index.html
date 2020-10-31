@@ -4,7 +4,7 @@
 	<title>PodCash</title>
 	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"></script>
 	<script type="text/javascript">
-		const contract_address = "0x5c77f68ad0d99e2d1934ba9b322c2443dfa940a7";
+		const contract_address = "0x874fb2ca3f4defde2d67f7fba74b351ba919583b";
 
 		const contract_abi = [
 	{
@@ -107,6 +107,7 @@
                 var val = document.getElementById("apoiar").value;
         	window.contratoPodCash.methods.apoiar().send({from:window.coinbase, to: contract_address, value: val});
 		}
+		
 
 
 		}
