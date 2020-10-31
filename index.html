@@ -9,32 +9,63 @@
 		const contract_abi = [
 	{
 		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [],
 		"name": "apoiar",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
 	},
-			
-
+	{
+		"inputs": [],
+		"name": "transfereAutor",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "getAutor",
+		"outputs": [
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "x",
-						"type": "uint256"
-					}
-				],
-				"name": "set",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getDescricao",
+		"outputs": [
 			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMes",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "getSuaContribuicao",
 		"outputs": [
@@ -46,10 +77,22 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getvalorArrecadado",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
+];
 		
-		
-		];
 
 		const ethEnabled = () => {
 		  if (window.ethereum) {
@@ -65,18 +108,7 @@
         	window.contratoPodCash.methods.apoiar().send({from:window.coinbase, to: contract_address, value: val});
 		}
 
-		async function saveCoinbase () {
-		  window.coinbase = await window.web3.eth.getCoinbase();
-		};
 
-		async function getAndShowApoio () {
-		  var val = window.contratoPodCash.methods.apoiar().call();
-		  document.getElementById("setme").value = await val;
-		};
-
-		async function getShowContribuicao() {
-		var val = window.contratoPodCash.methods.getSuaContribuicao().call();
-		  
 		}
 
 		if (!ethEnabled()) {
