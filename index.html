@@ -113,7 +113,7 @@
 		}
 		
 		async function getAndShowApoio(){
-		var val=parseInt(window.contratoPodCash.methods.getSuaContribuicao().call());
+		var val=window.contratoPodCash.methods.getSuaContribuicao().call();
 			document.getElementById("cont").value = await val;
 		console.log(val);
 		}
