@@ -112,11 +112,17 @@
         	window.contratoPodCash.methods.apoiar().send({from:window.coinbase, to: contract_address, value: val});
 		}
 		
-		async function getAndShowApoio (){
+		async function getAndShowApoio(){
 		var val=window.contratoPodCash.methods.getSuaContribuicao().call();
 			document.getElementById("cont").value = await val;
 		console.log(val);
 		}
+		
+		async function getAndShowValorArrecadado(){
+		var val=window.contratoPodCash.methods.getvalorArrecadado().call();
+			document.getElementById("arrec").value = await val;
+		console.log(val);
+		}		
 
 	
 
@@ -138,6 +144,9 @@
 	<button id="setme" onclick="getAndShowApoio()">Sua contribuição </button>
 	<br/>
 	Valor: <input type="text" name="cont" id="cont">
+	<br/>
+	<button id="setme" onclick="getAndShowValorArrecadado()">Total arrecadado: </button>
+	Valor: <input type="text" name="arrec" id="arrec">
 	<br/>
 </body>
 </html>
