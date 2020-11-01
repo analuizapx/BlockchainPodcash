@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-	body {
-	  font-family: 'Montserrat', Helvetica, sans-serif;
-	  text-align:center;
+	<!-- TUDO ISSO AQUI É SÓ DESIGN-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-	}
-	p {
-	  max-width: 560px;
-	  font-size: 18px;
-	  color: #222;
-	}
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-	button {
-	  font-family: 'Montserrat', Helvetica, sans-serif;
-	  border-radius: 20px;
-	  backgroung:blue;
-	  color: white;
-	  margin: 0 2px;
-	}
-		
-	</style>
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+
+	<!-- TERMINOU DESIGN-->
+	
 	
 	<title>PodCash</title>
 	<link rel="icon" type="imagem/png" href="./img/iconPodCash.png" />
@@ -173,25 +174,74 @@
 </head>
 <body>
 	
-	<p>
-	<button id="getme" onclick="setApoiar()">Apoiar</button>
-	<p/>
-	<p>
-	Valor: <input type="text" name="apoiar" id="apoiar"> wei
-	<p/>
-	<p>
-	<button id="setme" onclick="getAndShowApoio()">Sua contribuição </button>
-	<p/>
-	<p>
-	Valor: <input type="text" name="cont" id="cont"> wei
-	</p>
-	<p>
-	<button id="setme2" onclick="getAndShowValorArrecadado()">Total arrecadado: </button>
-	Valor: <input type="text" name="arrec" id="arrec"> wei
-	<p/>
-	<p>
-	<button id="setme3" onclick="transfereDono()">Transfere para autor </button>
-	<p/>
+	    <div class="page-wrapper bg-bla p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1> PODCASH </h1>
+                    <h3 class="title"> Resumido</h3>
+                    <p class="input-group" > por Bruno Natal </p>
+                    <p class="input-group"> A cada episódio Bruno Natal conecta as notícias e artigos mais relevantes da semana no universo da cultura digital, explicando como a tecnologia impacta nossas vidas.
+
+                    Tudo RESUMIDO em 20 e poucos minutos, para escutar escovando os dentes, lavando a louça ou no engarrafamento.  </p>
+
+                    <h4>Episódio Número 84</h4>
+
+                    <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/328898312&color=%232ce3ca&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/soundsmellu" title="MELLU" target="_blank" style="color: #cccccc; text-decoration: none;">MELLU</a> · <a href="https://soundcloud.com/soundsmellu/metro-rio" title="Metrô Rio" target="_blank" style="color: #cccccc; text-decoration: none;">Metrô Rio</a></div> 
+                    <form method="POST">
+
+                        <div class="input-group">
+                            <label class="label"> Doe uma quantia (em wei):</label>
+                                <div class="input-group-icon">
+                                    <input class="input--style-4" type="text" name="getme" id="apoiar"> 
+                                </div>
+                                
+                        </div>
+                        <div class="input-group">
+                        <button class="btn btn--radius-2 btn--blue p-b-100 p-t-130" onclick="setApoiar()"> Enviar </button><br/></div>
+
+                        <div class="input-group">
+                        <button class="btn btn--radius-2 btn--green p-t-30 p-b-100" onclick="getAndShowApoio()"> Ver sua colaboração:</button> <br/></div>
+
+                        <div class="input-group">
+                            <label class="label">  </label>
+                                <div class="input-group-icon">
+                                    <input class="input--style-4" type="text" name="getme2" id="cont"> 
+                                </div>
+                                
+                        </div>
+
+                        <div class="input-group">
+                        <button class="btn btn--radius-2 btn--green p-t-30 p-b-100" onclick="getAndShowValorArrecadado()"> Total Arrecadado:</button> <br/></div>
+
+                        <div class="input-group">
+                            <label class="label">  </label>
+                                <div class="input-group-icon">
+                                    <input class="input--style-4" type="text" name="getme3" id="arrec"> 
+                                </div>
+                                
+                        </div>
+
+
+                        <button class="btn btn--radius-2 btn--blue" type="transfereDono()"> Transferir dinheiro para Autor </button><br/>
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
 	
 
 </body>
